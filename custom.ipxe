@@ -8,6 +8,8 @@ clear custom_choice
 menu Custom Boot Options
 item --gap ISOs
 item open_in ${space} OpenIndiana 20231027
+item smartos ${space} SmartOS 20240111
+item freebsd ${space} FreeBSD 14.0
 item --gap Utils
 item memtest ${space} Memtest86+ 7.0
 choose custom_choice || goto custom_exit
@@ -27,6 +29,13 @@ set util_path https://us-central.manta.mnx.io/Joyent_Dev/public/SmartOS/20240111
 set util_file smartos-20240111T002438Z.iso
 set util_version 20240111T002438Z
 goto boot_memdisk
+
+:freebsd
+set util_path https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/FreeBSD-14.0-RELEASE-amd64-bootonly.iso
+set util_file FreeBSD-14.0-RELEASE-amd64-bootonly.iso
+set util_version 20240111T002438Z
+goto boot_memdisk
+
 
 :boot_memdisk
 imgfree
