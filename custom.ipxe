@@ -17,14 +17,14 @@ goto custom_exit
 
 
 :open_in
-kernel https://boot.netboot.xyz/memdisk raw iso
-initrd https://dlc.openindiana.org/isos/hipster/20231027/OI-hipster-gui-20231027.iso
+imgfree
+kernel https://dlc.openindiana.org/isos/hipster/20231027/OI-hipster-gui-20231027.usb
 boot || goto custom_exit
 
 :memtest
 imgfree
 kernel https://iiqstatic.z1.web.core.windows.net/memtest64.efi
-boot
+boot || goto custom_exit
 
 :custom_exit
 chain utils.ipxe
