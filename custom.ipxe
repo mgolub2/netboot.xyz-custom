@@ -9,7 +9,7 @@ menu Custom Boot Options
 item --gap ISOs
 item open_in ${space} OpenIndiana 20231027
 item --gap Utils
-item memtest ${space} Memtest86+ 6.20
+item memtest ${space} Memtest86+ 7.0
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
