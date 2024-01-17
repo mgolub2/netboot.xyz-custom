@@ -22,6 +22,12 @@ set util_file OI-hipster-text-20231027.usb
 set util_version 20231027
 goto boot_memdisk
 
+:smartos
+set util_path https://us-central.manta.mnx.io/Joyent_Dev/public/SmartOS/20240111T002438Z/smartos-20240111T002438Z.iso
+set util_file smartos-20240111T002438Z.iso
+set util_version 20240111T002438Z
+goto boot_memdisk
+
 :boot_memdisk
 imgfree
 kernel ${memdisk} iso raw
