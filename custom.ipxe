@@ -14,7 +14,7 @@ goto ${custom_choice}
 goto custom_exit
 
 
-:open_in 20231027
+:open_in
 kernel https://boot.netboot.xyz/memdisk raw iso
 initrd https://dlc.openindiana.org/isos/hipster/20231027/OI-hipster-gui-20231027.iso
 boot || goto custom_exit
