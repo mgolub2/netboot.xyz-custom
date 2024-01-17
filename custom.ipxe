@@ -8,6 +8,8 @@ clear custom_choice
 menu Custom Boot Options
 item --gap ISOs
 item open_in ${space} OpenIndiana 20231027
+item --gap Utils
+item memtest ${space} Memtest86+ 6.20
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
@@ -18,6 +20,11 @@ goto custom_exit
 kernel https://boot.netboot.xyz/memdisk raw iso
 initrd https://dlc.openindiana.org/isos/hipster/20231027/OI-hipster-gui-20231027.iso
 boot || goto custom_exit
+
+:memtest
+imgfree
+kernel https://iiqstatic.z1.web.core.windows.net/memtest64.efi
+boot
 
 :custom_exit
 chain utils.ipxe
