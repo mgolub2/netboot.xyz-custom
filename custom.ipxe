@@ -17,8 +17,18 @@ goto custom_exit
 
 
 :open_in
+set util_path https://dlc.openindiana.org/isos/hipster/20231027/OI-hipster-text-20231027.usb
+set util_file OI-hipster-text-20231027.usb
+set util_version 20231027
+goto boot_memdisk
+
+:boot_memdisk
 imgfree
-kernel https://dlc.openindiana.org/isos/hipster/20231027/OI-hipster-gui-20231027.usb
+kernel ${memdisk} iso raw
+initrd --name ${util_file} ${util_path}
+echo
+echo MD5sums:
+md5sum memdisk ${util_file}
 boot || goto custom_exit
 
 :memtest
